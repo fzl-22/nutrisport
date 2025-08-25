@@ -23,9 +23,9 @@ kotlin {
         iosSimulatorArm64()
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
-            baseName = "shared"
+            baseName = "auth"
             isStatic = true
-            binaryOption("bundleId", "site.nutrisport.shared")
+            binaryOption("bundleId", "site.nutrisport.auth")
         }
     }
 
@@ -44,6 +44,9 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+
+            implementation(libs.messagebar.kmp)
+            implementation(project(path = ":shared"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -52,7 +55,7 @@ kotlin {
 }
 
 android {
-    namespace = "site.nutrisport.shared"
+    namespace = "site.nutrisport.auth"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
