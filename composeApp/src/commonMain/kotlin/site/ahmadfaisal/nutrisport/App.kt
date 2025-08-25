@@ -18,11 +18,12 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import nutrisport.composeapp.generated.resources.Res
 import nutrisport.composeapp.generated.resources.compose_multiplatform
+import site.nutrisport.navigation.SetupNavGraph
 
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
-
+        SetupNavGraph()
     }
 }
