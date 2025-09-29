@@ -25,7 +25,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "shared"
             isStatic = true
-            binaryOption("bundleId", "site.nutrisport.shared")
+            binaryOption("bundleId", "site.ahmadfaisal.nutrisport.shared")
         }
     }
 
@@ -52,7 +52,7 @@ kotlin {
 }
 
 android {
-    namespace = "site.nutrisport.shared"
+    namespace = "site.ahmadfaisal.nutrisport.shared"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

@@ -1,4 +1,4 @@
-package site.nutrisport.shared
+package site.ahmadfaisal.nutrisport.shared
 
 object Alpha {
     const val FULL = 1f

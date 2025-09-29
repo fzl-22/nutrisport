@@ -1,7 +1,7 @@
-package site.nutrisport.navigation
+package site.ahmadfaisal.nutrisport.navigation
 
 import androidx.compose.runtime.Composable
-import site.nutrisport.auth.AuthScreen
+import site.ahmadfaisal.nutrisport.auth.AuthScreen
 
 @Composable
 fun SetupNavGraph() {

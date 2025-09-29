@@ -1,4 +1,4 @@
-package site.nutrisport.shared
+package site.ahmadfaisal.nutrisport.shared
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.Font

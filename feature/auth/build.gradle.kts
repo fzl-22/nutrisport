@@ -25,7 +25,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "auth"
             isStatic = true
-            binaryOption("bundleId", "site.nutrisport.auth")
+            binaryOption("bundleId", "site.ahmadfaisal.nutrisport.auth")
         }
     }
 
@@ -46,6 +46,9 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtime.compose)
 
             implementation(libs.messagebar.kmp)
+            implementation(libs.auth.kmp)
+            implementation(libs.auth.firebase.kmp)
+
             implementation(project(path = ":shared"))
         }
         commonTest.dependencies {
@@ -55,7 +58,7 @@ kotlin {
 }
 
 android {
-    namespace = "site.nutrisport.auth"
+    namespace = "site.ahmadfaisal.nutrisport.auth"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {

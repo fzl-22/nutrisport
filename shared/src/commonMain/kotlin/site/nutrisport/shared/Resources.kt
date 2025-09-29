@@ -1,4 +1,4 @@
-package site.nutrisport.shared
+package site.ahmadfaisal.nutrisport.shared
 
 import nutrisport.shared.generated.resources.Res
 import nutrisport.shared.generated.resources.*

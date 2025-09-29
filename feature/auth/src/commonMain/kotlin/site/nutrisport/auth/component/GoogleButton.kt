@@ -1,4 +1,4 @@
-package site.nutrisport.auth.component
+package site.ahmadfaisal.nutrisport.auth.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
@@ -19,6 +19,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -29,12 +31,12 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
-import site.nutrisport.shared.FontSize
-import site.nutrisport.shared.Resources
-import site.nutrisport.shared.Gray
-import site.nutrisport.shared.GrayDarker
-import site.nutrisport.shared.IconSecondary
-import site.nutrisport.shared.TextPrimary
+import site.ahmadfaisal.nutrisport.shared.FontSize
+import site.ahmadfaisal.nutrisport.shared.Resources
+import site.ahmadfaisal.nutrisport.shared.IconSecondary
+import site.ahmadfaisal.nutrisport.shared.SurfaceDarker
+import site.ahmadfaisal.nutrisport.shared.SurfaceLighter
+import site.ahmadfaisal.nutrisport.shared.TextPrimary
 
 @Composable
 fun GoogleButton(
@@ -44,15 +46,15 @@ fun GoogleButton(
     secondaryText: String = "Please wait...",
     icon: DrawableResource = Resources.Image.GoogleLogo,
     shape: Shape = RoundedCornerShape(size = 99.dp),
-    backgroundColor: Color = Gray,
-    borderColor: Color = GrayDarker,
+    backgroundColor: Color = SurfaceLighter,
+    borderColor: Color = SurfaceDarker,
     progressIndicatorColor: Color = IconSecondary,
     onClick: () -> Unit,
 ) {
-    val buttonText = remember { mutableStateOf(primaryText) }
+    var buttonText by remember { mutableStateOf(primaryText) }
 
     LaunchedEffect(loading) {
-        buttonText.value = if (loading) secondaryText else primaryText
+        buttonText = if (loading) secondaryText else primaryText
     }
 
     Surface(
@@ -93,7 +95,7 @@ fun GoogleButton(
             }
             Spacer(modifier = Modifier.width(12.dp))
             Text(
-                text = buttonText.value,
+                text = buttonText,
                 color = TextPrimary,
                 fontSize = FontSize.REGULAR
             )

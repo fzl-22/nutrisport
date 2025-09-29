@@ -25,7 +25,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "navigation"
             isStatic = true
-            binaryOption("bundleId", "site.nutrisport.navigation")
+            binaryOption("bundleId", "site.ahmadfaisal.nutrisport.navigation")
         }
     }
 
@@ -54,7 +54,7 @@ kotlin {
 }
 
 android {
-    namespace = "site.nutrisport.navigation"
+    namespace = "site.ahmadfaisal.nutrisport.navigation"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
